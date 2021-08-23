@@ -4,7 +4,7 @@
 import cv2
 
 # Please change the file location as needed
-file_location = 'E:\MiddleSchoolCurriculum\Chapter3\Image\dog_1.jpeg'
+file_location = r'E:\MiddleSchoolCurriculum\Chapter3\Image\dog_1.jpeg'
 
 try:
   # Read the image
