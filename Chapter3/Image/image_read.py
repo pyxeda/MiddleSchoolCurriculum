@@ -1,10 +1,15 @@
 # Python program to read an image and display it
 
-# Import OpenCV(cv2) module 
 import cv2
+import os
 
-# Please change the file location as needed
-file_location = r'E:\MiddleSchoolCurriculum\Chapter3\Image\dog_1.jpeg'
+# get the current working directory
+dir = os.path.dirname(__file__)
+
+# Please change the filename as needed
+filename = 'dog_1.jpeg'
+
+file_location = os.path.join(dir, filename)
 
 try:
   # Read the image
@@ -21,4 +26,3 @@ try:
 
 except:
   print ('Cannot find the file location. Please provide the right file location')
-
