@@ -24,5 +24,6 @@ try:
   # Destroying present windows on screen 
   cv2.destroyAllWindows() 
 
-except:
-  print ('Cannot find the file location. Please provide the right file location')
+except Exception as e:
+  print ('File cannot be found. Please provide the correct file name!')
+  print (e)
