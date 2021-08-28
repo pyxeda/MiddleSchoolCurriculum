@@ -1,4 +1,15 @@
-This Python program reads an image in the provided file location, and then displays it.
-For the task program uses OpenCV. 
-The user should install OpenCV in the local machine before execute the program.
-To display the image appropriately, user should provide the right file location of the image.  
+What it does :
+
+    1. Reads an image in the provided file location, and then displays it.
+
+Dependancies :
+
+Dependancies are needed for the image processing, and to get the path of the working directory
+
+    1. OpenCV(cv2) module is needed to be installed in the local machine, for the image processing.
+
+    2. os module is a part of the standard library. No need to install it.
+
+Things to check before running :
+
+    1. Check whether you have given the correct file name of the image.
