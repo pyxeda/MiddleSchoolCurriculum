@@ -1,45 +1,53 @@
-# python program to read and display tabular data
+# Python program to read and display tabular data from a csv file
 
-# import modules
+
+# Import pandas module to read the CSV file
 import pandas as pd
-import os
 
-# get the current working directory
-dir = os.path.dirname(__file__)
 
-# Please change the filename as needed
-filename = 'child vs adult.csv'
+# ------------------------ Get the file location from the google drive. -----------------------------
 
-file_location = os.path.join(dir, filename)
+# Please change the url as needed (make sure you have the access to the file)
+url = 'https://drive.google.com/file/d/1aKqueRc7yqB0ugTU6VrjG0oGnddq37bM/view?usp=sharing'
+
+# Derive the file id from the url
+file_id = url.split('/')[-2]
+
+# Derive the download url of the file
+file_location = 'https://drive.google.com/uc?id=' + file_id
+
+
+# --------- Reading and Displaying of data from the provided file location, will start now. ---------
 
 try:
-    # read the CSV file
+    # Read the CSV file
     data = pd.read_csv(file_location)
 
-    # print a sample (first row) from the tabular data
-    print('Sample (first row) from the dataset : ')
+    # Print a sample (first row) from the tabular data
+    print('---------- A Sample (first row) from the Dataset ----------')
     print(data.head(1))
     
-    # see the column names in the table
+    # See the column names in the table
     column_names = data.columns
-    print('Column names in the table : ')
+    print('---------- Column Names in the Table ----------')
     for column in column_names:
         print (column)
 
-    # you can change the column name as you needed, after visulaising the column names
+    # You can change the column name as you needed, after visulaising the column names
     column_name = 'Child'
     
-    # print specific column data from the tabular data
-    print('Data from the column ' + column_name + ' : ')
+    # Print specific column data from the tabular data
+    print('---------- Data from the Column ----------')
     if column_name in column_names:
         column = data[[column_name]]
         print (column)
         
-    # if you have provided a column name which cannot be seen under 'Column names in the table : ',
+    # If you have provided a column name which cannot be seen under 'Column names in the table : ',
     else:
         print ('Column name cannot be found. Please provide a correct column name')
 
 except Exception as e:
-    print ('File cannot be found. Please provide the correct file name!')
+    # File location or format incorrect/ You don't have the access
+    print ('File cannot be found. Please provide the correct file location')
     print (e)
 
