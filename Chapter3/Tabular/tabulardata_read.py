@@ -22,7 +22,7 @@ download_url = 'https://drive.google.com/uc?id=' + file_id
 # Give the location you want to save it in your local machine
 file_location = r'child vs adult.csv'
 
-# --------- Reading and Displaying of data from the provided file location, will start now. ---------
+# ----- Downloading, Reading and Displaying of data from the provided file location, will start now. ------
 
 try:
     # Download the file from drive to your local machine
