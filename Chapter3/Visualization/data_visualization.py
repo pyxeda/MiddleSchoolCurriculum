@@ -1,6 +1,6 @@
-# python program to visualize histograms and bar plots of data columns
+# Python program to visualize histograms and bar plots of data columns
     
-# import pandas module to read the CSV file and to process the tabular data
+# Import pandas module to read the CSV file and to process the tabular data
 import pandas as pd
 
 # Import matplotlib module for the data visualization
