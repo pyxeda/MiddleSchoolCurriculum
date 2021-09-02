@@ -1,42 +1,73 @@
 # Read text data (like log files) in python and print word by word or sentence by sentence
 
-# The execution of this code will print a text document, sentence by sentence.
+#------------------------------------------------ Read Text sentence by sentence ----------------------------------------------------
 
-# Import nltk module
+# Import nltk module for sentence identifying
 import nltk
 
+# Import gdown module to download files from google drive
+import gdown
+
+#------------------------------------------------ Get the file location from Google Drive -------------------------------------------
+    
+# Please change the URL as needed
+
+url = 'https://drive.google.com/file/d/1UiYaAwE0aJlkgM6qplwYLRxuRbndf6vF/view?usp=sharing'
+
+# Derive the file id from the URL
+file_id = url.split('/')[-2]
+
+# Derive the download url of the the file
+download_url = 'https://drive.google.com/uc?id=' + file_id
+
+# Give the location you want to save it in your local machine
+file_location = r'about_us.txt'
+
+
+#------------------------------------------------ Download the text file and print it -----------------------------------------------
+
 try:
+    # Download the file from drive to your local machine
+    gdown.download(download_url, file_location)
+    
     # Open the file in the specified location
-    with(open(r'about_us.txt') as file):
+    with(open(file_location) as file):
+
         # Read the file
         text = file.read()
-        # Use sent_tokenize function in nltk to identify each sentance separately in your text file
+
+        # Use sent_tokenize function to identify each sentance separately
         senetences = nltk.sent_tokenize(text)
-        # Print each sentence in the list
+
+        # Print each sentence
         for senetence in senetences:
             print(senetence)
-# Ask the user to input the correct location, if the location is incorrect
+# Notifying the user about the error
 except Exception as e:
-    print('Can not find the file location. Please provide the correct file location!')
     print(e)
+    print('File location or format incorrect/ You do not have the access')
 
 
-# The execution of the below code will print a text document, word by word. You can uncomment the below code and comment out the above code if you want to run this.
+#------------------------------------------------- Read Text word by word ----------------------------------------------------------
 
 # try:
-#     # open file by giving the correct file location.
-#     with open(r'about_us.txt') as file:
-#         # We keep a word count, just to check all the words are printed
+#     # Open the file in the specified location
+#     with open(file_location) as file:
+
+#         # Keep a word count, to check all the words are printed
 #         word_count = 0
+
 #         # Iterate through each line of the file
 #         for line in file:
-#             # Iterate through each word of a line after splitting the line into a list
+
+#             # Iterate through each word of a line after splitting
 #             for word in line.split():
+
 #                 # Add word count for every printed word.
 #                 word_count = word_count + 1
 #                 print('word : ', word_count)
 #                 print(word)
-# # Ask the user to provide the correct file location, if the location is incorrect
+# # Notifying the user about the error
 # except:
-#     print('Can not find the file location. Please provide the correct file location!')
+#     print('File location or format incorrect/ You do not have the access')
 
