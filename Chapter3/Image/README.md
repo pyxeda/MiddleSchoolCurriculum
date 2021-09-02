@@ -13,4 +13,6 @@ Things to check before running :
 
     1. Check whether you have given the correct file location of the image. 
 
-    2. Make sure you have the access to the file. 
+    2. Check whether you have access to the file. 
+
+    3. Check whether the file format is correct.

@@ -23,7 +23,7 @@ download_url = 'https://drive.google.com/uc?id=' + file_id
 file_location = r'dog.png'
 
 
-# --- Downloading, Reading and Displaying of the image from the provided file location, will start now. ---
+# ---- Downloading, Reading and Displaying of the image from the provided file location, will start now. ----
 
 try:
   # Download the file from drive to your local machine
