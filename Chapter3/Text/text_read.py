@@ -51,6 +51,9 @@ except Exception as e:
 #------------------------------------------------- Read Text word by word ----------------------------------------------------------
 
 # try:
+#     # Download the file from drive to your local machine
+#     gdown.download(download_url, file_location)
+
 #     # Open the file in the specified location
 #     with open(file_location) as file:
 
