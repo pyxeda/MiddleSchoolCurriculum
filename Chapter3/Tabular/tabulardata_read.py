@@ -4,8 +4,11 @@
 # Import pandas module to read the CSV file
 import pandas as pd
 
+# Import gdown module to download files from google drive
+import gdown
 
-# ------------------------ Get the file location from the google drive. -----------------------------
+
+# -------------------------- Get the file location from the google drive. ---------------------------------
 
 # Please change the url as needed (make sure you have the access to the file)
 url = 'https://drive.google.com/file/d/1aKqueRc7yqB0ugTU6VrjG0oGnddq37bM/view?usp=sharing'
@@ -14,12 +17,17 @@ url = 'https://drive.google.com/file/d/1aKqueRc7yqB0ugTU6VrjG0oGnddq37bM/view?us
 file_id = url.split('/')[-2]
 
 # Derive the download url of the file
-file_location = 'https://drive.google.com/uc?id=' + file_id
+download_url = 'https://drive.google.com/uc?id=' + file_id
 
+# Give the location you want to save it in your local machine
+file_location = r'child vs adult.csv'
 
 # --------- Reading and Displaying of data from the provided file location, will start now. ---------
 
 try:
+    # Download the file from drive to your local machine
+    gdown.download(download_url, file_location)
+
     # Read the CSV file
     data = pd.read_csv(file_location)
 
@@ -47,7 +55,6 @@ try:
         print ('Column name cannot be found. Please provide a correct column name')
 
 except Exception as e:
-    # File location or format incorrect/ You don't have the access
-    print ('File cannot be found. Please provide the correct file location')
-    print (e)
+  # Notifying the user about the error
+  print ("File location or format incorrect/ You don't have the access!")
 
