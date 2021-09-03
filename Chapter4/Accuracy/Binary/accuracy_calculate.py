@@ -9,7 +9,7 @@ count = 0
 # Initialise the variable to count the no. of correctly predicted labels
 correctPredictions = 0
 
-# Initialise the variable to check the validation of the inputs
+# Initialise the variable to check the validity of the inputs
 inputsValid = False
 
 # -------------------------------------------- Inputs --------------------------------------------------
@@ -41,14 +41,14 @@ if inputsValid:
         # Check whether both lists contain the same number of elements
         if len(labels) == len (aiPredictions):
             
-            # Iterate through the each actual label in the list 'labels'
-            for i in range(len(labels)):
+            # Iterate through the each index of actual labels in the list 'labels'
+            for label in range(len(labels)):
                 
                 # Increase the count by 1, after iterated through each actual label
                 count += 1
                 
                 # Check whether the predicted label is same as the actual label           
-                if labels[i] == aiPredictions[i]:
+                if labels[label] == aiPredictions[label]:
                     
                     # If predicted label is same as the actual label, increase the correctPredictions count by 1
                     correctPredictions += 1
