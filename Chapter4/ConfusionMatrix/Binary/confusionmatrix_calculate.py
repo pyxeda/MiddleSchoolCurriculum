@@ -1,4 +1,5 @@
-# Python program to calucalte the confusion matrix for binary classification
+# Python program to calucalte the confusion matrix for binary case
+# Binary classification
 
 # Import pandas to calculate confusion matrix
 import pandas as pd
@@ -8,7 +9,7 @@ import pandas as pd
 # Actuals
 actuals = [1, 1, 1, 1, 1, 0, 0, 1, 1, 1]
 
-# Predictiions
+# Predictions
 predictions = [1, 0, 1, 0, 1, 0, 1, 1, 1, 1]
 
 #--------------------------------------------- Calculate the Confusion Matrix --------------------------------------------
@@ -29,7 +30,7 @@ try:
         # Print Confusion Matrix
         print("Confusion matrix \n \n", confusion_matrix)
     else:
-        print ('Both lists must be contained the same number of elements')
+        print ('Both lists must contain the same number of elements')
 # Notifying the user about the error
 except Exception as e:
-    print('Please provide items with same type in the lists!')
+    print('All items of the lists, should be of same type')
