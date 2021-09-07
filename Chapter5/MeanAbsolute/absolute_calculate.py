@@ -42,9 +42,8 @@ try:
 
 # Notifying the user about the error  
 except Exception as e:
-    print ('Please provide valid elements')
-    print (e)
-
+    print('Please provide valid elements')
+    
 else:
     # Check whether both lists contain the same number of elements
     if len(actuals) != len (predictions):
