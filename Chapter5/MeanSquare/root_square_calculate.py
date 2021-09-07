@@ -34,13 +34,13 @@ inputsValid = False
 
 # ------------------------------- Giving inputs and validation of inputs --------------------------------
 
-# Change the lists; 'label' and 'aiPredictions' as you needed
+# Change the lists; 'labels' and 'aiPredictions' as you needed
 try:
     # Actual labels
     labels = [1, 2, 5, 2.3, 5, 4.6, 7]
 
     # Predicted labels   
-    aiPredictions = [0.5, 4.3, 2.1, 2.9, 8.6, 2.6, 4.5] 
+    aiPredictions = [-1, 4, 3, 4.3, 7, 2.6, 5] 
 
 except Exception as e:
     # Notifying the user about the error
@@ -79,7 +79,7 @@ if inputsValid:
         error = labels[label] - aiPredictions[label]
 
         # Square the error found in above step
-        squareError = error**2
+        squareError = error ** 2
 
         # Sum up the squared errors
         squaredErrorSum += squareError
@@ -88,9 +88,9 @@ if inputsValid:
     mse = squaredErrorSum / count
 
     # Calculate the root mean square error 
-    rmse = mse**0.5
+    rmse = mse ** 0.5
 
     # Print the rmse value
-    print ('RMSE: ', rmse)
+    print ('Root Mean Square Error (RMSE): ', rmse)
 
     
