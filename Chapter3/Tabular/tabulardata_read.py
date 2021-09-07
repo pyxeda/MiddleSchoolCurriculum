@@ -29,7 +29,7 @@ import gdown
 # -------------------------- Get the file location from the google drive. ---------------------------------
 
 # Please change the url as needed (make sure you have the access to the file)
-url = 'https://drive.google.com/file/d/1aKqueRc7yqB0ugTU6VrjG0oGnddq37bM/view?usp=sharing'
+url = 'https://drive.google.com/file/d/14M8iBxSoAoUQqt4SGtv427jrKSThIlGM/view?usp=sharing'
 
 # Derive the file id from the url
 file_id = url.split('/')[-2]
