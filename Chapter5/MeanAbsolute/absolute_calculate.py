@@ -16,49 +16,53 @@ EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
 AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 OR OTHER DEALINGS IN THE SOFTWARE.'''
 
-
-# Python code to calculate the Absolute Mean Error (MAE), for given two lists. 
+# Python code to calculate the Mean Absolute Error (MAE), for given two lists. 
 # list _1 is actuals and list_2 is AI predictions. 
 
 
 # ------------------------------------ Initialize the variables ----------------------------------------
 
-# Variable to count the no. of actual labels 
+# Variable to count the no. of actual items 
 count = 0
 
 # Variable to get error sum
 error_sum = 0
 
-# Variable to check the length of the lists
-valid_length = False
+# Initialize the variable to check the validity of the given lists
+lists_valid = False
 
-# ------------------------------- Lists ----------------------------------------------
-    
-# Actuals
-actuals = [12, 13, 14, 15, 15, 22, 27]
+# ------------------------------------ Validation of inputs ---------------------------------------------
 
-# Predictions  
-predictions = [11, 13, 14, 14, 15, 16, 18]
-    
-# ------------------------------- Length validation of inputs --------------------------------
+try:   
+    # Actuals
+    actuals = [12, 13, 14, 15, 15, 22, 27]
 
-# Check whether both lists contain the same number of elements
-if len(actuals) != len (predictions):
-    print('Both lists must be contain the same number of elements')
+    # Predictions  
+    predictions = [11, 13, 14, 14, 15, 16, 18]
 
-# Check whether the lists are empty
-elif len(actuals) == 0:
-    print('Lists should not be empty')
+# Notifying the user about the error  
+except Exception as e:
+    print ('Please provide valid elements')
+    print (e)
 
-# Confirm the user has given valid inputs for both lists
 else:
-    # Make 'inputsValid' : True
-    valid_length = True
+    # Check whether both lists contain the same number of elements
+    if len(actuals) != len (predictions):
+        print('Both lists must be contain the same number of elements')
 
-# ------------------------------------ MAE Calculation -----------------------------------------
+    # Check whether the lists are empty
+    elif len(actuals) == 0:
+        print('Lists should not be empty')
+
+    # Confirm the user has given valid inputs for both lists
+    else:
+        # Make 'lists_valid' : True
+        lists_valid = True
+
+# ------------------------------------ MAE Calculation ---------------------------------------------------
 
 # This part will only execute if the given inputs are valid
-if valid_length: 
+if lists_valid: 
     try:
         # Iterate through each item of the list 'actuals'
         for item in range(len(actuals)):
@@ -78,6 +82,6 @@ if valid_length:
         # Print the MAE value
         print ('Mean Absolute Error : ', mae)
     except:
-        print('All items of the lists, should be of same type')
+        print('All items of the lists, should be numbers')
 
     
