@@ -10,7 +10,7 @@ import gdown
     
 # Please change the URL as needed (make sure you have the access to the file)
 
-url = 'https://drive.google.com/file/d/14A91Km8obCo7ohpfEr4_Nel5d8uKPiAl/view?usp=sharing'
+url = 'https://drive.google.com/file/d/1K7izykrla-qEuekekLayfGddml17calY/view?usp=sharing'
 
 # Derive the file id from the URL
 file_id = url.split('/')[-2]
