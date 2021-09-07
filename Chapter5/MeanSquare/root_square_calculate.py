@@ -28,8 +28,8 @@ count = 0
 # Initialise the variable to sum up all the squared errors
 squaredErrorSum = 0
 
-# Initialise the variable to check the validity of the inputs
-inputsValid = False
+# Initialise the variable to check the validity of the given lists
+listsValid = False
 
 
 # ------------------------------- Giving inputs and validation of inputs --------------------------------
@@ -37,7 +37,7 @@ inputsValid = False
 # Change the lists; 'labels' and 'aiPredictions' as you needed
 try:
     # Actual labels
-    labels = [1, 2, 5, 2.3, 5, 4.6, 7]
+    labels = [1, 2, 5, 2.3, 5, 4.6, 3]
 
     # Predicted labels   
     aiPredictions = [-1, 4, 3, 4.3, 7, 2.6, 5] 
@@ -58,39 +58,43 @@ else:
         # If the lists are empty,
         print ('Lists should not be empty')
 
-    # Confirm the user has given valid inputs for both lists
+    # Confirm the user has inputted valid lists
     else:
-        # Make the variable name 'inputsValid' True
-        inputsValid = True
+        # Make the variable name 'listsValid' True
+        listsValid = True
 
 
 # ------------------------------------ RMSE calculation starts here -----------------------------------------
 
 # This part will only execute if the given inputs are valid
-if inputsValid: 
+if listsValid: 
 
-    # Iterate through the each index of actual labels in the list 'labels'
-    for label in range(len(labels)):
+    try: 
 
-        # Increase the count by 1, after iterated through each actual label
-        count += 1
+        # Iterate through the each index of actual labels in the list 'labels'
+        for label in range(len(labels)):
 
-        # Calculate the error between actual label and predicted label           
-        error = labels[label] - aiPredictions[label]
+            # Increase the count by 1, after iterated through each actual label
+            count += 1
 
-        # Square the error found in above step
-        squareError = error ** 2
+            # Calculate the error between actual label and predicted label           
+            error = labels[label] - aiPredictions[label]
 
-        # Sum up the squared errors
-        squaredErrorSum += squareError
+            # Square the error found in above step
+            squareError = error ** 2
 
-    # Calculate the mean square error 
-    mse = squaredErrorSum / count
+            # Sum up the squared errors
+            squaredErrorSum += squareError
 
-    # Calculate the root mean square error 
-    rmse = mse ** 0.5
+        # Calculate the mean square error 
+        mse = squaredErrorSum / count
 
-    # Print the rmse value
-    print ('Root Mean Square Error (RMSE): ', rmse)
+        # Calculate the root mean square error 
+        rmse = mse ** 0.5
 
+        # Print the rmse value
+        print ('Root Mean Square Error (RMSE): ', rmse)
+
+    except:
+        print ('All items of the lists, should be numbers')
     
