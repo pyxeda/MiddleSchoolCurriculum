@@ -40,9 +40,16 @@ download_url = 'https://drive.google.com/uc?id=' + file_id
 # Give the location you want to save it in your local machine
 file_location = r'dog.png'
 
+
+# -------------------------------------- Dimensions to resize the image. ---------------------------------------
+
 # Change the dimensions as you needed, to resize the image
-length = 224     # Length to resize the image
-width = 224      # Width to resize the image
+
+# Length to resize the image
+length = 224 
+
+# Width to resize the image
+width = 224      
 
 
 # --------------------------- Downloading and Processing of the image will start now. ----------------------------
