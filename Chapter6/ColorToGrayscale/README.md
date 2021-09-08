@@ -1,6 +1,6 @@
 What it does :
 
-    1. Reads an image from the google drive, then converts it to grayscale and finaly displays both images.
+    1. Reads an image from the google drive, then converts it to grayscale and finally displays both images.
 
 Dependancies :
 
