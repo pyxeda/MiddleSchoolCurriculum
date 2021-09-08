@@ -16,16 +16,14 @@ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
 OR OTHER DEALINGS IN THE SOFTWARE.'''
 
 
-# Python program to apply an edge filter (sobel) and visualize the filtered image..
+# Python program to apply an edge filter (sobel) and visualize the filtered image.
 
 
-# Import opencv module to read, resize, and display images
+# Import opencv module to read, filter, and display images
 import cv2
 
 # Import gdown module to download files from the google drive
 import gdown
-
-from matplotlib import pyplot as plt
 
 
 # ------------------------------- Get the file location from the google drive. ---------------------------------
@@ -58,7 +56,7 @@ try:
     # Apply the sobel filter to detect edges in given direction
     # If you want to detect edges only in horizontal direction, make dx=1 and dy=0
     # If you want to detect edges only in vertical direction, make dx=0 and dy=1
-    # If you want to detect edges only in both directions, make dx=1 and dy=1
+    # If you want to detect edges in both directions, make dx=1 and dy=1
     # You can change the kernal size (ksize) appropriately 
     edge_filtered_image = cv2.Sobel(src=gray_image, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5)  
     
