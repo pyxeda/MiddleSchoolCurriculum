@@ -1,6 +1,6 @@
 What it does :
 
-    1. Reads an image from the google drive, then apply a sobel filter to detect edges and, finally displays both images.
+    1. Reads an image from the google drive, then apply a sobel filter to detect edges and, finally displays the both images.
 
 Dependancies :
 
