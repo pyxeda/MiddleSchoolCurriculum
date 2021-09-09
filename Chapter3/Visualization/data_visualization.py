@@ -32,7 +32,7 @@ import gdown
 # -------------------------- Get the file location from the google drive. ---------------------------------
 
 # Please change the url as needed (make sure you have the access to the file)
-url = 'https://drive.google.com/file/d/14M8iBxSoAoUQqt4SGtv427jrKSThIlGM/view?usp=sharing'
+url = 'https://drive.google.com/file/d/1J5z8OsAtgSp9i1eLxQFoxVexSZJuhI_-/view?usp=sharing'
 
 # Derive the file id from the url
 file_id = url.split('/')[-2]
@@ -65,7 +65,7 @@ try:
     # ------------------------------------------- Plot the Histogram --------------------------------------------- #
    
     # Select a column name to plot the hoistogram, after visulaising the details of the dataset.
-    histogram_data = 'Child'
+    histogram_data = 'num_countries'
 
     # Visualize the histogram of the selected column
     if  histogram_data in column_names:
@@ -93,9 +93,9 @@ try:
 
     # Select the column names to plot the bar graph, after visulaizing the details of the dataset
     # According to the dataset you can change the number of y axis columns as you needed
-    column_x_axis = 'Year of registration'
-    column_y_axis_1 = 'Adult'
-    column_y_axis_2 = 'Child'
+    column_x_axis = 'num_countries'
+    column_y_axis_1 = 'years_school'
+    column_y_axis_2 = 'height'
     
     # Visualize the bar plot of selected columns
     if column_x_axis and column_y_axis_1 and column_y_axis_2 in column_names:
