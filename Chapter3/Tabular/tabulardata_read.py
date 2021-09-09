@@ -29,7 +29,7 @@ import gdown
 # -------------------------- Get the file location from the google drive. ---------------------------------
 
 # Please change the url as needed (make sure you have the access to the file)
-url = 'https://drive.google.com/file/d/14M8iBxSoAoUQqt4SGtv427jrKSThIlGM/view?usp=sharing'
+url = 'https://drive.google.com/file/d/1J5z8OsAtgSp9i1eLxQFoxVexSZJuhI_-/view?usp=sharing'
 
 # Derive the file id from the url
 file_id = url.split('/')[-2]
@@ -61,7 +61,7 @@ try:
         print (column)
 
     # You can change the column name as you needed, after visulaising the column names
-    column_name = 'Child'
+    column_name = 'who_am_I'
     
     # Print specific column data from the tabular data
     print('---------- Data from the Column ----------')
