@@ -60,7 +60,7 @@ try:
 
     # Get the column names of the dataset
     column_names = data.columns
-    
+
     
     # ------------------------------------------- Plot the Histogram --------------------------------------------- #
    
@@ -91,35 +91,21 @@ try:
     
     # ------------------------------------------- Plot the Bar Graph --------------------------------------------- #
 
-    # Select the column names to plot the bar graph, after visulaizing the details of the dataset
-    # According to the dataset you can change the number of y axis columns as you needed
-    column_x_axis = 'num_countries'
-    column_y_axis_1 = 'years_school'
-    column_y_axis_2 = 'height'
+    # Select the x axis to plot the bar graph, after visulaizing the details of the dataset
+    x_axis = 'num_countries'
     
-    # Visualize the bar plot of selected columns
-    if column_x_axis and column_y_axis_1 and column_y_axis_2 in column_names:
+    # Visualize the bar plot 
+    if x_axis in column_names:
         
-        # Create the dataframe
-        df = pd.DataFrame({
-        column_x_axis: data[column_x_axis],
-        column_y_axis_1: data[column_y_axis_1],
-        column_y_axis_2: data[column_y_axis_2]})
-
         # Plot the bar graph
-        df.plot(x=column_x_axis, y=[column_y_axis_1, column_y_axis_2], kind="bar")
-
-        # Set the title, x-axis name and the y-axis name of the plot
-        plt.title('Bar graph for ' + file_location)
-        plt.xlabel(column_x_axis)
-        plt.ylabel('Frequency')
-
+        bargraph = data.plot.bar(x = x_axis)
+        
         # Show the plot
         plt.show()
 
-    # If you have provided column names which cannot be seen under 'Details of the Dataset',
+    # If you have provided a x axis name which cannot be seen under 'Details of the Dataset',
     else:
-        print ('Column names to plot the bar graph cannot be found. Please provide column names correctly!')
+        print ('x axis name to plot the bar graph cannot be found. Please provide column names correctly!')
 
 except Exception as e:
   # Notifying the user about the error
