@@ -65,7 +65,7 @@ try:
     # ------------------------------------------- Plot the Histogram --------------------------------------------- #
    
     # Select a column name to plot the hoistogram, after visulaising the details of the dataset.
-    histogram_data = 'num_countries'
+    histogram_data = 'height'
 
     # Visualize the histogram of the selected column
     if  histogram_data in column_names:
@@ -90,24 +90,24 @@ try:
 
     
     # ------------------------------------------- Plot the Bar Graph --------------------------------------------- #
-
-    # Select the x axis to plot the bar graph, after visulaizing the details of the dataset
-    x_axis = 'num_countries'
     
-    # Visualize the bar plot 
-    if x_axis in column_names:
-        
+    try:
+        # Get a frequency count based on two columns
+        # Select the 2 column names, after visulaizing the details of the dataset
+        data_bar = pd.crosstab(data.years_school, data.who_am_I)
+
         # Plot the bar graph
-        bargraph = data.plot.bar(x = x_axis)
-        
+        bar_plot = data_bar.plot(kind='bar')
+
         # Show the plot
         plt.show()
 
-    # If you have provided a x axis name which cannot be seen under 'Details of the Dataset',
-    else:
-        print ('x axis name to plot the bar graph cannot be found. Please provide column names correctly!')
+    # If you have provided a column name which cannot be seen under 'Details of the Dataset',
+    except:
+        print ('Column names to plot the bar graph cannot be found. Please provide column names correctly!')
 
 except Exception as e:
   # Notifying the user about the error
   print ("File location or format incorrect/ You don't have the access!")
+  print (e)
 
