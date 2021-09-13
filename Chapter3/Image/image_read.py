@@ -21,14 +21,14 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 # Import opencv module to read and display images
 import cv2
 
-# Import gdown module to download files from google drive
+# Import gdown module to download files from the google drive
 import gdown
 
 
 # ----------------------------- Get the file location from the google drive. ---------------------------------
 
 # Please change the url as needed (make sure you have the access to the file)
-url = 'https://drive.google.com/file/d/1CokCuNkyP1zvuTXj_-hxIwevXz4TG9SA/view?usp=sharing'
+url = 'https://drive.google.com/file/d/1qWTeephmlGic3lsAefx6UstyX7WlEaUL/view?usp=sharing'
 
 # Derive the file id from the url
 file_id = url.split('/')[-2]
