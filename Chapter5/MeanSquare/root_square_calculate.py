@@ -20,77 +20,39 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 # list _1 is actual labels and list_2 is AI predictions. 
 
 
-# ------------------------------------ Initialise the variables ----------------------------------------
+# Import mean_squared_error function for error calculations
+from sklearn.metrics import mean_squared_error 
 
-# Initialise the variable to count the no. of actual labels 
-count = 0
-
-# Initialise the variable to sum up all the squared errors
-squaredErrorSum = 0
-
-# Initialise the variable to check the validity of the inputs
-inputsValid = False
+# Import sqrt function to get the square root of the mean_squared_error
+from math import sqrt
 
 
-# ------------------------------- Giving inputs and validation of inputs --------------------------------
+# ------------------------------------------ Input lists ------------------------------------------------
 
-# Change the lists; 'labels' and 'aiPredictions' as you needed
-try:
-    # Actual labels
-    labels = [1, 2, 5, 2.3, 5, 4.6, 7]
+# Change the lists; 'actual_labels' and 'ai_predictions' as you needed
 
-    # Predicted labels   
-    aiPredictions = [-1, 4, 3, 4.3, 7, 2.6, 5] 
+# Actual labels
+actual_labels = [1, 2, 5, 2.3, 5, 4.6, 3]
 
-except Exception as e:
-    # Notifying the user about the error
-    print ('Please provide valid elements')
-    print (e)
-
-else:
-    # Check whether both lists are contain the same number of elements
-    if len(labels) != len (aiPredictions):
-        # If the number of elements in the 2 lists are not same,
-        print ('Both lists must be contained the same number of elements')
-
-    # Check whether the lists are empty
-    elif len(labels) == 0:
-        # If the lists are empty,
-        print ('Lists should not be empty')
-
-    # Confirm the user has given valid inputs for both lists
-    else:
-        # Make the variable name 'inputsValid' True
-        inputsValid = True
+# Predicted labels   
+ai_predictions = [-1, 4, 3, 4.3, 7, 2.6, 5] 
 
 
 # ------------------------------------ RMSE calculation starts here -----------------------------------------
 
-# This part will only execute if the given inputs are valid
-if inputsValid: 
+try:
+    # Calculate the mean squared error 
+    mse = mean_squared_error(actual_labels, ai_predictions)
 
-    # Iterate through the each index of actual labels in the list 'labels'
-    for label in range(len(labels)):
-
-        # Increase the count by 1, after iterated through each actual label
-        count += 1
-
-        # Calculate the error between actual label and predicted label           
-        error = labels[label] - aiPredictions[label]
-
-        # Square the error found in above step
-        squareError = error ** 2
-
-        # Sum up the squared errors
-        squaredErrorSum += squareError
-
-    # Calculate the mean square error 
-    mse = squaredErrorSum / count
-
-    # Calculate the root mean square error 
-    rmse = mse ** 0.5
+    # Calculate the root mean squared error 
+    rmse = sqrt(mse)
 
     # Print the rmse value
-    print ('Root Mean Square Error (RMSE): ', rmse)
+    print ('Root Mean Squared Error (RMSE): ', rmse)
+
+except Exception as e:
+    # Notifying the user about the error
+    print (e)
+
 
     
