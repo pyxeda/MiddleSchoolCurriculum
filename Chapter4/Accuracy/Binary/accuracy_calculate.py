@@ -48,7 +48,7 @@ try:
     print ('Accuaracy: ', accuracy)
     
     # Print the percentage of the accuracy
-    print ('Accuracy Percentage: ' , str(accuracy_percentage) , ' %')
+    print ('Accuracy Percentage: ', str(accuracy_percentage), '%')
 
 except Exception as e:
     # Notifying the user about the error
