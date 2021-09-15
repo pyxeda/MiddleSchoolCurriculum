@@ -18,36 +18,22 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 # Python program to calucalte the confusion matrix for three categories
 # Multi classification
 
-# Import pandas to calculate confusion matrix
-import pandas as pd
+# Import confusion matrix from sklearn library
+from sklearn.metrics import confusion_matrix
 
 #--------------------------------------------- Lists --------------------------------------------------------------------
 
 # Actuals
-actuals = ['a','a','b','b','b','b','b','c','c']
+actuals = ['cat', 'cat', 'racoon', 'racoon', 'dog', 'cat', 'dog', 'racoon']
 
 # Predictions
-predictions = ['a','a','a','b','b','b','c','c','c']
+predictions = ['racoon', 'cat', 'racoon', 'dog', 'dog', 'cat', 'cat', 'racoon'] 
 
-#--------------------------------------------- Calculate the Confusion Matrix --------------------------------------------
+#--------------------------------------------- Construct the Confusion Matrix --------------------------------------------
 
-try:
-    # Check whether both lists contain the same number of elements
-    if len(actuals) == len (predictions):
-        
-        # Convert actual list to a series
-        actuals = pd.Series(actuals, name='Actual')
-        
-        # Convert prediction list to a series
-        predictions = pd.Series(predictions, name='Predictions')
-        
-        # Create Confusion Matrix
-        confusion_matrix = pd.crosstab(predictions, actuals)
+# Construct Confusion Matrix
+constructed_confusion_matrix = confusion_matrix(predictions, actuals)
 
-        # Print Confusion Matrix
-        print("Confusion matrix \n \n", confusion_matrix)
-    else:
-        print ('Both lists must contain the same number of elements')
-# Notifying the user about the error
-except Exception as e:
-    print('All items of the lists, should be of same type')
+# Print Confusion Matrix
+print("Confusion matrix \n \n", constructed_confusion_matrix)
+    
