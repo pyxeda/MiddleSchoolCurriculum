@@ -4,7 +4,7 @@ What it does :
 
 Dependancies :
 
-    1. No need.
+    1. sklearn module is needed to be installed in the local machine to calculate the accuracy.
 
 Things to check before running :
 
