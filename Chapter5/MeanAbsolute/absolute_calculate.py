@@ -23,15 +23,7 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 from sklearn.metrics import mean_absolute_error
 
 
-# ------------------------------------ Initialize the variables ----------------------------------------
-
-# Variable to count the no. of actual items 
-count = 0
-
-# Variable to get error sum
-error_sum = 0
-
-# ------------------------------------ Validation of inputs ---------------------------------------------
+# ------------------------------------ Lists ------------------------------------------------------------
 
 # Actuals
 actuals = [12, 13, 14, 15, 15, 22, 27]
@@ -40,6 +32,12 @@ actuals = [12, 13, 14, 15, 15, 22, 27]
 predictions = [11, 13, 14, 14, 15, 16, 18]  
 
 # ------------------------------------ MAE Calculation without sklearn -----------------------------------
+
+# Variable to count the no. of actual items 
+count = 0
+
+# Variable to get error sum
+error_sum = 0
 
 # Iterate through each item of the list 'actuals'
 for item in range(len(actuals)):
@@ -61,6 +59,7 @@ print ('Mean Absolute Error without sklearn : ', mae_without_sklearn)
     
 # ------------------------------------ MAE Calculation with sklearn ----------------------------------------
 
+# Calculate MAE using sklearn
 mae_with_sklearn = mean_absolute_error(actuals, predictions)
 
 # Print the MAE value
