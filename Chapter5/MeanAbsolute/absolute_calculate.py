@@ -19,6 +19,9 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 # Python code to calculate the Mean Absolute Error (MAE), for given two lists. 
 # list _1 is actuals and list_2 is AI predictions. 
 
+# Import mean_absolute_error for sklearn based calculation
+from sklearn.metrics import mean_absolute_error
+
 
 # ------------------------------------ Initialize the variables ----------------------------------------
 
@@ -28,59 +31,38 @@ count = 0
 # Variable to get error sum
 error_sum = 0
 
-# Initialize the variable to check the validity of the given lists
-lists_valid = False
-
 # ------------------------------------ Validation of inputs ---------------------------------------------
 
-try:   
-    # Actuals
-    actuals = [12, 13, 14, 15, 15, 22, 27]
+# Actuals
+actuals = [12, 13, 14, 15, 15, 22, 27]
 
-    # Predictions  
-    predictions = [11, 13, 14, 14, 15, 16, 18]
+# Predictions  
+predictions = [11, 13, 14, 14, 15, 16, 18]  
 
-# Notifying the user about the error  
-except Exception as e:
-    print('Please provide valid elements')
+# ------------------------------------ MAE Calculation without sklearn -----------------------------------
+
+# Iterate through each item of the list 'actuals'
+for item in range(len(actuals)):
+
+    # Increase the count by 1, when iterating
+    count += 1
+
+    # Calculate the difference between actual value and predicted value           
+    error = actuals[item] - predictions[item]
+
+    # Sum up the errors
+    error_sum += error
+
+# Calculate the mean absolute error
+mae_without_sklearn = error_sum / count
+
+# Print the MAE value
+print ('Mean Absolute Error without sklearn : ', mae_without_sklearn)
     
-else:
-    # Check whether both lists contain the same number of elements
-    if len(actuals) != len (predictions):
-        print('Both lists must be contain the same number of elements')
+# ------------------------------------ MAE Calculation with sklearn ----------------------------------------
 
-    # Check whether the lists are empty
-    elif len(actuals) == 0:
-        print('Lists should not be empty')
+mae_with_sklearn = mean_absolute_error(actuals, predictions)
 
-    # Confirm the user has given valid inputs for both lists
-    else:
-        # Make 'lists_valid' : True
-        lists_valid = True
+# Print the MAE value
+print ('Mean Absolute Error with sklearn : ', mae_with_sklearn)
 
-# ------------------------------------ MAE Calculation ---------------------------------------------------
-
-# This part will only execute if the given inputs are valid
-if lists_valid: 
-    try:
-        # Iterate through each item of the list 'actuals'
-        for item in range(len(actuals)):
-
-            # Increase the count by 1, when iterating
-            count += 1
-
-            # Calculate the difference between actual value and predicted value           
-            error = actuals[item] - predictions[item]
-
-            # Sum up the errors
-            error_sum += error
-
-        # Calculate the mean absolute error
-        mae = error_sum / count
-
-        # Print the MAE value
-        print ('Mean Absolute Error : ', mae)
-    except:
-        print('All items of the lists, should be numbers')
-
-    
