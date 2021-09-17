@@ -18,10 +18,13 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 # Python program to calucalte the confusion matrix for three categories
 # Multi classification
 
-# Import confusion matrix from sklearn library
+# Import confusion_matrix for sklearn based calculation
 from sklearn.metrics import confusion_matrix
 
-#--------------------------------------------- Lists --------------------------------------------------------------------
+# Import pandas for pandas based calculation
+import pandas as pd
+
+#--------------------------------------------- Lists -------------------------------------------------------
 
 # Actuals
 actuals = ['cat', 'cat', 'racoon', 'racoon', 'dog', 'cat', 'dog', 'racoon']
@@ -29,11 +32,26 @@ actuals = ['cat', 'cat', 'racoon', 'racoon', 'dog', 'cat', 'dog', 'racoon']
 # Predictions
 predictions = ['racoon', 'cat', 'racoon', 'dog', 'dog', 'cat', 'cat', 'racoon'] 
 
-#--------------------------------------------- Construct the Confusion Matrix --------------------------------------------
+#--------------------------------------------- Confusion Matrix using sklearn ------------------------------
 
 # Construct Confusion Matrix
 constructed_confusion_matrix = confusion_matrix(predictions, actuals)
 
 # Print Confusion Matrix
-print("Confusion matrix \n \n", constructed_confusion_matrix)
+print("Confusion matrix using sklearn \n \n", constructed_confusion_matrix)
+
+#--------------------------------------------- Confusion Matrix using pandas --------------------------------
+
+# Convert actual list to a series
+actuals = pd.Series(actuals, name='Actual')
+
+# Convert prediction list to a series
+predictions = pd.Series(predictions, name='Predictions')
+
+# Create Confusion Matrix
+confusion_matrix = pd.crosstab(predictions, actuals)
+
+# Print Confusion Matrix
+print("\n Confusion matrix using pandas \n \n", confusion_matrix)
+
     
