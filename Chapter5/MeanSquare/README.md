@@ -2,6 +2,10 @@ What it does :
 
     1. Calculates the Root Mean Square Error of given two lists.
 
+        a. Without using libraries
+
+        b. Using libraries
+
 Dependancies :
 
     1. sklearn module is needed to be installed in the local machine to calculate mean squared error.

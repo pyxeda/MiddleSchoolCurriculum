@@ -32,7 +32,7 @@ from math import sqrt
 # Change the lists; 'actual_labels' and 'ai_predictions' as you needed
 
 # Actual labels
-actual_labels = [1, 2, 5, 2.3, 5, 4.6, 3]
+actual_labels = [1, 2, 5, 2.3, 5, 4.6, 3.7]
 
 # Predicted labels   
 ai_predictions = [-1, 4, 3, 4.3, 7, 2.6, 5] 
@@ -41,14 +41,44 @@ ai_predictions = [-1, 4, 3, 4.3, 7, 2.6, 5]
 # ------------------------------------ RMSE calculation starts here -----------------------------------------
 
 try:
-    # Calculate the mean squared error 
-    mse = mean_squared_error(actual_labels, ai_predictions)
 
-    # Calculate the root mean squared error 
-    rmse = sqrt(mse)
+    # ----------------------------------- Without using Libraries -------------------------------------------
+
+    # Initialise the variable to sum up all the squared errors
+    squaredErrorSum = 0
+    
+    # Iterate through the each index of actual labels in the list 'labels'
+    for label in range(len(actual_labels)):
+
+        # Calculate the error between actual label and predicted label           
+        error = actual_labels[label] - ai_predictions[label]
+
+        # Square the error found in above step
+        squareError = error**2
+
+        # Sum up the squared errors
+        squaredErrorSum += squareError
+
+    # Calculate the mean square error 
+    mse_without_sklearn = squaredErrorSum / len(actual_labels)
+
+    # Calculate the root mean square error 
+    rmse_without_sklearn = mse_without_sklearn ** 0.5
 
     # Print the rmse value
-    print ('Root Mean Squared Error (RMSE): ', rmse)
+    print ('RMSE without using sklearn: ', rmse_without_sklearn)
+
+
+    # ------------------------------------- Using libraries -------------------------------------------------
+    
+    # Calculate the mean squared error 
+    mse_using_sklearn = mean_squared_error(actual_labels, ai_predictions)
+
+    # Calculate the root mean squared error 
+    rmse_using_sklearn = sqrt(mse_using_sklearn)
+
+    # Print the rmse value
+    print ('RMSE using sklearn: ', rmse_using_sklearn)
 
 except Exception as e:
     # Notifying the user about the error
