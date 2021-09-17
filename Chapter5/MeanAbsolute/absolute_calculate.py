@@ -29,15 +29,15 @@ from sklearn.metrics import mean_absolute_error
 actuals = [12, 13, 14, 15, 15, 22, 27]
 
 # Predictions  
-predictions = [11, 13, 14, 14, 15, 16, 18]  
+predictions = [11, 13, 14, 14, 15, 55, 35] 
 
 # ------------------------------------ MAE Calculation without sklearn -----------------------------------
 
 # Variable to count the no. of actual items 
 count = 0
 
-# Variable to get error sum
-error_sum = 0
+# Variable to get absolute error sum
+absolute_error_sum = 0
 
 # Iterate through each item of the list 'actuals'
 for item in range(len(actuals)):
@@ -47,12 +47,15 @@ for item in range(len(actuals)):
 
     # Calculate the difference between actual value and predicted value           
     error = actuals[item] - predictions[item]
+    
+    # Get absolute value of the error using 'abs' function
+    absolute_error = abs(error)
 
     # Sum up the errors
-    error_sum += error
+    absolute_error_sum += absolute_error
 
 # Calculate the mean absolute error
-mae_without_sklearn = error_sum / count
+mae_without_sklearn = absolute_error_sum / count
 
 # Print the MAE value
 print ('Mean Absolute Error without sklearn : ', mae_without_sklearn)
