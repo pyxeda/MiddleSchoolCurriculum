@@ -24,7 +24,7 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 from sklearn.metrics import accuracy_score
 
 
-# --------------------------------------------- Input lists --------------------------------------------
+# --------------------------------------------- Input lists -----------------------------------------------------
 
 # Change the lists; 'actual_label' and 'ai_predictions' as you needed
 
@@ -35,21 +35,43 @@ actual_labels = ['cat', 'cat', 'racoon', 'racoon', 'dog', 'cat', 'dog', 'racoon'
 ai_predictions = ['racoon', 'cat', 'racoon', 'dog', 'dog', 'cat', 'cat', 'racoon'] 
 
 
-# -------------------------------- Accuracy calculation starts here -------------------------------------
+# ------------------------------- Accuracy calculation without using libraries  ----------------------------------
 
-try:      
-    # Claculate the accuracy
-    accuracy =  accuracy_score(actual_labels, ai_predictions)   
-        
-    # Calculate the accuracy percentage
-    accuracy_percentage = accuracy * 100
+# Initialise the variable to count the no. of correctly predicted labels
+correct_predictions = 0
 
-    # Print the accuracy
-    print ('Accuaracy: ', accuracy)
-    
-    # Print the percentage of the accuracy
-    print ('Accuracy Percentage: ', str(accuracy_percentage), '%')
+# Iterate through the each index of actual labels in the list 'labels'
+for label in range(len(actual_labels)):
 
-except Exception as e:
-    # Notifying the user about the error
-    print (e)
+    # Check whether the predicted label is same as the actual label           
+    if actual_labels[label] == ai_predictions[label]:
+
+        # If predicted label is same as the actual label, increase the correctPredictions by 1
+        correct_predictions += 1
+
+# Calculate the accuracy 
+accuracy_without_sklearn = correct_predictions / len(actual_labels)
+
+# Calculate the accuracy percentage
+accuracy_percentage_without_sklearn = accuracy_without_sklearn * 100
+
+# Print the accuracy
+print ('Accuracy without using sklearn: ', accuracy_without_sklearn)
+
+# Print the percentage of the accuracy
+print ('Accuracy percentage without using sklearn: ', str(accuracy_percentage_without_sklearn), '%') 
+
+
+# ----------------------------------- Accuracy calculation using libraries  --------------------------------------
+
+# Claculate the accuracy
+accuracy_using_sklearn =  accuracy_score(actual_labels, ai_predictions)   
+
+# Calculate the accuracy percentage
+accuracy_percentage_using_sklearn = accuracy_using_sklearn * 100
+
+# Print the accuracy
+print ('\nAccuracy using sklearn: ', accuracy_using_sklearn)
+
+# Print the percentage of the accuracy
+print ('Accuracy percentage using sklearn: ', str(accuracy_percentage_using_sklearn), '%')
