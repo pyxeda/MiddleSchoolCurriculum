@@ -1,6 +1,6 @@
 What it does :
 
-    1. Reads a csv file from the google drive, then create a random forest classification model on the child vs adult dataset. Visualize the tree. Calculate the confusion matrix and accuracy.
+    1. Reads a csv file from the google drive, then create a decision tree classification model on the child vs adult dataset. Visualize the tree. Calculate the confusion matrix and accuracy.
 
 Dependancies :
 

@@ -60,7 +60,7 @@ file_location = r'child vs adult.csv'
 gdown.download(download_url, file_location)
 
 
-# ------------------------------------ Create the KNN classification model --------------------------------------------
+# ---------------------------------- Create the Decision Tree Classifier Model -------------------------------------
 
 # Read the CSV file
 data = pd.read_csv(file_location)
@@ -83,13 +83,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Create decision tree classifier
 # You can change the max_depth in order to get a heigher accuracy
-clf = DecisionTreeClassifier(max_depth=3)
+classifier = DecisionTreeClassifier(max_depth=3)
 
 # Train the model
-clf.fit(X_train, y_train)
+classifier.fit(X_train, y_train)
 
 # Predict using test values
-y_pred = clf.predict(X_test)
+y_pred = classifier.predict(X_test)
 
 # Get actual values and predicted values into a table
 predicted_results = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
@@ -106,7 +106,7 @@ target_names = data[target_column].unique().tolist()
 
 # Plot the decision tree
 fig = plt.figure(figsize=(15,10))
-plot_tree(clf, feature_names=feature_names, class_names=target_names, filled=True)
+plot_tree(classifier, feature_names=feature_names, class_names=target_names, filled=True)
 plt.show()
 
 
