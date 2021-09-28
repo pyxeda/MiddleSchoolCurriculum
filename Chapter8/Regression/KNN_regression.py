@@ -57,7 +57,7 @@ file_location = r'average.csv'
 gdown.download(download_url, file_location)
 
 
-# ------------------------------------ Create the KNN classification model --------------------------------------------
+# ------------------------------------ Create the KNN regressor model --------------------------------------------
 
 # Read the CSV file
 data = pd.read_csv(file_location)
@@ -80,7 +80,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Create KNN regressor
 # You can change the n_neighbors in order to reduce the error
-knn = KNeighborsRegressor(n_neighbors = 7)
+knn = KNeighborsRegressor(n_neighbors=7)
 
 # Train the model
 knn.fit(X_train, y_train)
