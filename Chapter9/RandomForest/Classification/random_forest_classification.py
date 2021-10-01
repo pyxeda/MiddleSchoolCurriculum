@@ -60,7 +60,7 @@ file_location = r'child vs adult.csv'
 gdown.download(download_url, file_location)
 
 
-# ---------------------------------- Create the Decision Tree Classifier Model -------------------------------------
+# ---------------------------------- Create the Random Forest Classifier Model -------------------------------------
 
 # Read the CSV file
 data = pd.read_csv(file_location)
