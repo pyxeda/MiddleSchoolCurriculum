@@ -1,1 +1,22 @@
-This readme should describe 'what is in the python code'.
+What it does :
+
+    1. Reads a csv file from the google drive, then create a logistic regression model on the child vs adult dataset. Calculate the accuracy and confusion matrix.
+
+Dependancies :
+
+    1. sklearn module is needed to be installed in the local machine.
+
+    2. pandas module is needed to be installed in the local machine, to read CSV.
+
+    3. gdown module is needed to be installed in the local machine, to download the CSV file from the google drive. 
+
+
+Things to check before running :
+
+    1. Check whether you have access to the internet. 
+    
+    2. Check whether you have given the correct file location of the csv file. 
+
+    3. Check whether you have access to the file. 
+
+    4. Check whether the file format is correct.
