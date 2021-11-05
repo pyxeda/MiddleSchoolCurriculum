@@ -98,7 +98,7 @@ model.compile(optimizer=tf.keras.optimizers.RMSprop(),
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
-# Train the model
+# Fit the training data
 history = model.fit(train_batches,
                          steps_per_epoch=24,
                          epochs=1, #<-- increase for higher accuracy
