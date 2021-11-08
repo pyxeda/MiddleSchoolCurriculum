@@ -72,6 +72,7 @@ combined_file = plant.merge(weather, on=["DATE_TIME", "PLANT_ID"], suffixes=("_G
 combined_file.to_csv('output.csv', sep = ',')
 
 #------------------------------------------------- Start the training and prediction --------------------------------------------------------
+
 # Get feature coloumns
 X2 = combined_file[['AMBIENT_TEMPERATURE', 'MODULE_TEMPERATURE', 'IRRADIATION']]
 
