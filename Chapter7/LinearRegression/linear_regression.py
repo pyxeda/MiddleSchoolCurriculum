@@ -24,12 +24,14 @@ from sklearn.model_selection import train_test_split
 # Import LinearRegression class to get linear regression object
 from sklearn.linear_model import LinearRegression
 
-# Import r2_score function to calculate accuracy
-from sklearn.metrics import r2_score
+# Import metrics from sklearn
+from sklearn import metrics
 
 # Import gdown module to download files from the google drive
 import gdown
 
+# Import numpy
+import numpy as np
 
 # ------------------------------- Get the file from the google drive. ---------------------------------
 
@@ -74,16 +76,12 @@ y_pred = regressor.predict(X_test)
 
 # Get actual values and predicted values into a table
 predicted_results = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
-print(predicted_results)
 
 
-# ------------------------------- Calculate the accuracy ---------------------------------------------------------
+# ------------------------------- Calculate MAE and RMSE values -------------------------------------------------
 
-# Calculate accuracy using 'r2_score'
-accuracy = r2_score(y_test, y_pred)
-print('Accuracy of your model :',accuracy)
-
-
+print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
+print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 
 
 
