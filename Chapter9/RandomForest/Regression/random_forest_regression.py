@@ -94,10 +94,6 @@ regressor.fit(X_train, y_train)
 # Predict using test values
 y_pred = regressor.predict(X_test)
 
-# Get actual values and predicted values into a table
-predicted_results = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
-print('\n---------- Predicted Results ----------\n', predicted_results)
-
 
 # ---------------------------------------- Visualize one of the Trees ---------------------------------------------
 
