@@ -15,12 +15,9 @@ EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
 AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 OR OTHER DEALINGS IN THE SOFTWARE.'''
 
-# Read text data (like log files) in python and print word by word or sentence by sentence
+# Read text data (like log files) in python and print line by line
 
-#------------------------------------------------ Read Text sentence by sentence ----------------------------------------------------
-
-# Import nltk module for sentence identifying
-import nltk
+#------------------------------------------------ Read Text line by line ------------------------------------------------------------
 
 # Import gdown module to download files from google drive
 import gdown
@@ -43,26 +40,22 @@ file_location = r'about_us.txt'
 
 #------------------------------------------------ Download the text file and print it -----------------------------------------------
 
-try:
-    # Download the file from drive to your local machine
-    gdown.download(download_url, file_location)
+# Download the file from drive to your local machine
+gdown.download(download_url, file_location)
+
+# Open the file in the specified location
+with(open(file_location) as file):
+
+    # Read the file
+    lines = file.readlines()
     
-    # Open the file in the specified location
-    with(open(file_location) as file):
+    # Initialize line count
+    line_count = 0
 
-        # Read the file
-        text = file.read()
-
-        # Use sent_tokenize function to identify each sentance separately
-        senetences = nltk.sent_tokenize(text)
-
-        # Print each sentence
-        for senetence in senetences:
-            print(senetence)
-# Notifying the user about the error
-except Exception as e:
-    print(e)
-    print('File location or format incorrect/ You do not have the access')
+    # Print each line of the text
+    for line in lines:
+        line_count += 1
+        print(f'line {line_count}: {line}')
 
 
 #------------------------------------------------- Read Text word by word ----------------------------------------------------------
