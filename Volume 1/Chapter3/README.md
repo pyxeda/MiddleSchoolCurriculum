@@ -1,4 +1,4 @@
-This folder include all the python code examples related to Chapter 3:Data
+This folder include all the python code examples related to Chapter 3: Data for AI
 
 Image         ->  How to read an image in python and display it 
 
