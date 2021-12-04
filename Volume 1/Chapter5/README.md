@@ -1,5 +1,10 @@
-This folder include all the python code examples related to Chapter 5:Mean Errors
+This folder include all the python code examples related to Chapter 5: Classification
 
-MeanAbsolute         ->  Give two lists. list _1 is labels and list_2 is AI predictions, calculate the Mean Absolute Error
+Accuracy         ->  
+    Binary         ->   Give two lists. list _1 is labels and list_2 is AI predictions, calculate the accuracy (binary case)
+    Category       ->   Give two lists. list _1 is labels and list_2 is AI predictions, calculate the accuracy (3 category case)
 
-MeanSquare           ->  Give two lists. list _1 is labels and list_2 is AI predictions, calculate the Root Mean Square Error
+ConfusionMatrix  ->  
+    Binary         ->   Give two lists. list _1 is labels and list_2 is AI predictions, calculate the confusion matrix (binary case)
+    Category       ->   Give two lists. list _1 is labels and list_2 is AI predictions, calculate the confusion matrix (3 category case)
+
