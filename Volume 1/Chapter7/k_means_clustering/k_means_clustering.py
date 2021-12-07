@@ -23,21 +23,10 @@ from sklearn.datasets import make_blobs
 # Import kmeans module
 from sklearn.cluster import KMeans
 
-# Import math module to calculate standard deviation
-import math
-
-# ------------------------------------ Calculate standard deviation ----------------------------------------------
-
-# Define variance among each cluster
-cluster_variance = 0.7
-
-# Calculate standard deviation
-std_deviation = math.sqrt(cluster_variance)
-
 # ------------------------------------ Generate and plot the 2D dataset -------------------------------------------
 
 # Generate the two dimensional dataset
-X, y_true = make_blobs(n_samples=300, centers=4, cluster_std=std_deviation, random_state=0)
+X, y_true = make_blobs(n_samples=300, centers=4, cluster_std=0.8, random_state=0)
 
 # Plot the dataset figure
 plt.scatter(X[:, 0], X[:, 1], s=50)
