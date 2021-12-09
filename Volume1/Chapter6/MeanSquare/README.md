@@ -1,6 +1,6 @@
 What it does :
 
-    1. Calculates the Root Mean Square Error of given two lists.
+    1. Calculates the root mean square error between two lists, AI predictions and the labels.
 
         a. Without using libraries
 

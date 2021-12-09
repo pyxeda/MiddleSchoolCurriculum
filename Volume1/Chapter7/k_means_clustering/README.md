@@ -1,6 +1,6 @@
 What it does :
 
-    1. Generate random data in 2D and run k means algorithm on the dataset.
+    1. This code generates random data in 2D and runs the k-means algorithm on the dataset using the value of k provided by the user.
 
 Dependancies :
 

@@ -44,7 +44,7 @@ file_location = r'about_us.txt'
 gdown.download(download_url, file_location)
 
 # Open the file in the specified location
-with(open(file_location) as file):
+with open(file_location) as file:
 
     # Read the file
     lines = file.readlines()

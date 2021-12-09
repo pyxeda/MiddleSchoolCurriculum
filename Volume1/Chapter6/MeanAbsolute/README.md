@@ -1,6 +1,6 @@
 What it does :
 
-    1. Calculates the Absolute Mean Error of given two lists.
+    1. Calculates the mean absolute error between two lists, AI predictions and the labels.
 
 Dependancies :
 
