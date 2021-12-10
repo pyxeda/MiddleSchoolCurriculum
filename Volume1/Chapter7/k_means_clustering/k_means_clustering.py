@@ -23,6 +23,9 @@ from sklearn.datasets import make_blobs
 # Import kmeans module
 from sklearn.cluster import KMeans
 
+# Import silhouette_score function
+from sklearn.metrics import silhouette_score
+
 # ------------------------------------ Generate and plot the 2D dataset -------------------------------------------
 
 # Generate the two dimensional dataset
@@ -58,6 +61,14 @@ plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200)
 
 # Show the clusters with their centroids
 plt.show()
+
+# --------------------------------------- Calculate the Silhoutte Score  --------------------------------------------
+
+# Calculate Silhoutte Score
+silhoutte_score = silhouette_score(X, kmeans.labels_, metric='euclidean')
+
+# Print the Silhoutte score
+print ('Silhouetter Score:', silhoutte_score)
 
 
 
