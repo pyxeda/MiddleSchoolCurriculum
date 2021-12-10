@@ -1,6 +1,6 @@
 What it does :
 
-    1. Reads a csv file from the google drive, then create a knn regression model on the average dataset. Calculate the RMSE and MAE.
+    1. This code reads a csv file, trains a knn regression model on the dataset and then calculates the MAE and RMSE metrics.
 
 Dependancies :
 

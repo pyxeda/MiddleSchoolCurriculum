@@ -1,6 +1,6 @@
 What it does :
 
-    1. Reads an csv from the google drive, then create a linear regression model on the average dataset. Calculate the accuracy.
+    1. This code reads a csv file and creates a linear regression model (using scikit learn). Then, it evaluates its performance using MAE and RMSE metrics.
 
 Dependancies :
 

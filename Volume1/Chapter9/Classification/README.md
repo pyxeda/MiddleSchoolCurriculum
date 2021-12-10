@@ -1,6 +1,6 @@
 What it does :
 
-    1. Reads a csv file from the google drive, then create a knn classification model on the child vs adult dataset. Calculate the confusion matrix and accuracy.
+    1. This code reads a csv file, trains a knn classification model on the dataset and then calculates the accuracy and confusion matrix.
 
 Dependancies :
 

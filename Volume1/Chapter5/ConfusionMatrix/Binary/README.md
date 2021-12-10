@@ -1,6 +1,6 @@
 What it does :
 
-    1. This Python program take two lists, list _1 is labels and list_2 is AI predictions. Then calculate the confusion matrix.
+    1. This Python program takes two lists, list _1 is labels and list_2 is AI predictions that contains 2 categories. Then confusion matrix is calculated.
 
 Dependancies :
 
