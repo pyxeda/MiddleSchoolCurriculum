@@ -64,7 +64,7 @@ try:
     
     # ------------------------------------------- Plot the Histogram --------------------------------------------- #
    
-    # Select a column name to plot the hoistogram, after visulaising the details of the dataset.
+    # Select a column name to plot the histogram, after visualizing the details of the dataset.
     histogram_data = 'height'
 
     # Visualize the histogram of the selected column
@@ -93,7 +93,7 @@ try:
     
     try:
         # Get a frequency count based on two columns
-        # Select the 2 column names, after visulaizing the details of the dataset
+        # Select the 2 column names, after visualizing the details of the dataset
         data_bar = pd.crosstab(data.years_school, data.who_am_I)
 
         # Plot the bar graph

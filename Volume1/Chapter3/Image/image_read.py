@@ -53,7 +53,7 @@ try:
   # Output the image with window name as 'Image' 
   cv2.imshow('Image', image) 
 
-  # Maintain the output window utill user presses a key 
+  # Maintain the output window until user presses a key 
   cv2.waitKey(0)		 
 
   # Destroying the present windows on screen 

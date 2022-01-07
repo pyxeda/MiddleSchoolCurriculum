@@ -46,7 +46,7 @@ for label in range(len(actual_labels)):
     # Check whether the predicted label is same as the actual label           
     if actual_labels[label] == ai_predictions[label]:
 
-        # If predicted label is same as the actual label, increase the correctPredictions by 1
+        # If predicted label is same as the actual label, increase the correct predictions by 1
         correct_predictions += 1
 
 # Calculate the accuracy 

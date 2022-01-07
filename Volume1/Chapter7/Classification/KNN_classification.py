@@ -76,7 +76,7 @@ y = data[target_column].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, stratify=y)
 
 # Create KNN classifier
-# You can change the n_neighbors in order to get a heigher accuracy
+# You can change the n_neighbors in order to get a higher accuracy
 knn = KNeighborsClassifier(n_neighbors = 20)
 
 # Train the model
