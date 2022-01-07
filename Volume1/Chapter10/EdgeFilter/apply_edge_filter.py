@@ -66,7 +66,7 @@ try:
     # Output the edge filtered image with window name as 'Edge Filtered Image' 
     cv2.imshow('Edge Filtered Image', edge_filtered_image) 
 
-    # Maintain the output window util user presses a key 
+    # Maintain the output window until user presses a key 
     cv2.waitKey(0)		 
 
     # Destroying the present windows on screen 

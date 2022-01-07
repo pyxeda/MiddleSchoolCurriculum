@@ -70,7 +70,7 @@ try:
     # Output the resized image with window name as 'Resized Image' 
     cv2.imshow('Resized Image', resized_image) 
 
-    # Maintain the output window util user presses a key 
+    # Maintain the output window until user presses a key 
     cv2.waitKey(0)		 
 
     # Destroying the present windows on screen 
@@ -80,7 +80,7 @@ except Exception as e:
     # Read the error string
     error_string = str(e)
 
-    # If user has provide invalid inputs as the length and width to resize the image,
+    # If user has provided invalid inputs as the length and width to resize the image,
     if 'has a wrong type' in error_string:
         # Notifying the user about the error
         print ('Plese provide valid numbers as the dimensions')

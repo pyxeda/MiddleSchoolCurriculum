@@ -60,7 +60,7 @@ try:
     for column in column_names:
         print (column)
 
-    # You can change the column name as you needed, after visulaising the column names
+    # You can change the column name as you needed, after visualizing the column names
     column_name = 'who_am_I'
     
     # Print specific column data from the tabular data
