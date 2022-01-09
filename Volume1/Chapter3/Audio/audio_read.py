@@ -32,7 +32,7 @@ url = 'https://drive.google.com/file/d/1K7izykrla-qEuekekLayfGddml17calY/view?us
 # Derive the file id from the URL
 file_id = url.split('/')[-2]
 
-# Derive the download url of the the file
+# Derive the download url of the file
 download_url = 'https://drive.google.com/uc?id=' + file_id
 
 # Give the location you want to save it in your local machine
@@ -71,7 +71,7 @@ try:
             # Stop the audio
             mixer.music.stop()
             break
-# Catch the keyboard Intercept action
+# Catch the keyboard intercept action
 except KeyboardInterrupt:
     print('Program stopped by user.')
 # Notifying the user about the error

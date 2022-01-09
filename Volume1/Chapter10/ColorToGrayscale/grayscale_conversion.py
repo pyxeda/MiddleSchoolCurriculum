@@ -19,7 +19,7 @@ OR OTHER DEALINGS IN THE SOFTWARE.'''
 # Python program to read a color image and convert it to grayscale and visualize it.
 
 
-# Import opencv module to read, covert to grayscale and, to display images
+# Import opencv module to read, convert to grayscale and, to display images
 import cv2
 
 # Import gdown module to download files from the google drive
@@ -59,7 +59,7 @@ try:
   # Output the grayed out image with window name as 'Grayscale Image' 
   cv2.imshow('Grayscale Image', gray_image) 
 
-  # Maintain the output window util user presses a key 
+  # Maintain the output window until user presses a key 
   cv2.waitKey(0)		 
 
   # Destroying the present windows on screen 

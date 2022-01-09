@@ -31,7 +31,7 @@ actuals = [12, 13, 14, 15, 15, 22, 27]
 # Predictions  
 predictions = [11, 13, 14, 14, 15, 55, 35] 
 
-# ------------------------------------ MAE Calculation without sklearn -----------------------------------
+# ------------------------------------ MAE calculation without sklearn -----------------------------------
 
 # Variable to count the no. of actual items 
 count = 0
@@ -60,7 +60,7 @@ mae_without_sklearn = absolute_error_sum / count
 # Print the MAE value
 print ('Mean Absolute Error without sklearn : ', mae_without_sklearn)
     
-# ------------------------------------ MAE Calculation with sklearn ----------------------------------------
+# ------------------------------------ MAE calculation with sklearn ----------------------------------------
 
 # Calculate MAE using sklearn
 mae_with_sklearn = mean_absolute_error(actuals, predictions)
